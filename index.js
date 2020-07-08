@@ -8,7 +8,7 @@ const {
 } = d3;
 const svg = select("svg");
 
-const height = 600;
+const height = document.body.clientHeight;
 const width = document.body.clientWidth;
 
 const typeColours = {
