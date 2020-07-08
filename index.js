@@ -59,7 +59,7 @@ function render(data){
         .attr('class', 'axis-label')
         .remove();
 
-        const xAxisG = g.append("g")
+    const xAxisG = g.append("g")
         .call(xAxis.ticks(5))
         .attr("transform", `translate(0, ${innerHeight})`)
         
