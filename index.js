@@ -64,26 +64,19 @@ function render(data){
         .attr("transform", `translate(0, ${innerHeight})`)
         
     xAxisG.select(".domain")
-        .remove();
-    
-    xAxisG.append('text')
-        .attr('class', 'axis-label')
-        .attr('y',60)
-        .attr('x', innerWidth/2)
-        .text("Number")  
+        .remove(); 
         
     g.selectAll("rect")
         .data(data)
         .enter()
             .append("rect")
-                .attr("id",d => d.type)
                 .attr("y", (d) => yScale(yValue(d)))
                 .attr("height", yScale.bandwidth())
                 .attr('fill', d=>typeColours[d.type])
                 .transition().duration(2000)
                 .attr("width", (d) => xScale(xValue(d)))
-                .append("title")
-                    .text(d => d.number);
+                // .append("title")
+                //     .text(d => d.number);
 }
 
 const typeObj = {};
@@ -92,6 +85,7 @@ fetch('https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.
 .then(res=>res.json())
 .then(data => {                
     const pokemon = data.pokemon;
+    console.log(pokemon)
     pokemon.forEach(pokemon => {
         if (typeObj[pokemon.type[0]]){
             typeObj[pokemon.type[0]]++;
@@ -100,6 +94,7 @@ fetch('https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.
             typeObj[pokemon.type[0]] = 1;
         }
     })
+    console.log(typeObj)
     const types = Object.entries(typeObj).map(([type, number]) => ({type,number}));
     console.log("types", types)
     
