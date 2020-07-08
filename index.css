@@ -1,0 +1,15 @@
+svg {
+    overflow: visible;
+}
+
+text {
+    font-size: 2em;
+}
+
+rect {
+    opacity: .7;
+}
+
+rect:hover {
+    opacity: 1;
+}
