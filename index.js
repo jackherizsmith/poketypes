@@ -8,7 +8,7 @@ const {
 } = d3;
 const svg = select("svg");
 
-const height = 950;
+const height = 600;
 const width = document.body.clientWidth;
 
 const typeColours = {
@@ -33,7 +33,7 @@ const typeColours = {
 function render(data){
     const xValue = d => d.number;
     const yValue = d => d.type;
-    const margin = { top: 20, right: 40, bottom: 0, left: 100 };
+    const margin = { top: 20, right: 40, bottom: 30, left: 100 };
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
     
