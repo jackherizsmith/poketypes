@@ -87,8 +87,7 @@ fetch('https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.
     const pokemon = data.pokemon;
     console.log(pokemon)
     pokemon.forEach(pokemon => {
-        const type = typeObj[pokemon.type[0]];
-        type = type ? type + 1 : 1;
+        typeObj[pokemon.type[0]] = typeObj[pokemon.type[0]] ? typeObj[pokemon.type[0]] + 1 : 1;
     })
     console.log(typeObj)
     const types = Object.entries(typeObj).map(([type, number]) => ({type,number}));
