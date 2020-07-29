@@ -91,7 +91,7 @@ fetch('https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.
     })
     console.log(typeObj)
     const types = Object.entries(typeObj).map(([type, number]) => ({type,number}));
-    console.table("types", types)
+    console.table(types)
     
     render(types);
 });
